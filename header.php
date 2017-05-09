@@ -92,43 +92,22 @@
                         <!-- Logo End -->
                     </div>
                     <div id="navbar" class="navbar-collapse collapse navbar-right reset-padding">
-                        <!-- Navigation Links Start -->
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html">Home</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Hosting <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="shared-hosting.html">Shared</a></li>
-                                    <li><a href="reseller-hosting.html">Reseller</a></li>
-                                    <li><a href="vps-hosting-1.html">VPS Style 1</a></li>
-                                    <li><a href="vps-hosting-2.html">VPS Style 2</a></li>
-                                    <li><a href="dedicated-hosting-1.html">Dedicated Style 1</a></li>
-                                    <li><a href="dedicated-hosting-2.html">Dedicated Style 2</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="domains.html">Domains</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="datacenter.html">Datacenter</a></li>
-                                    <li><a href="testimonial.html">Testimonial</a></li>
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="affiliate.html">Affiliate</a></li>
-                                    <li><a href="404.html">404</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Blog <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog_sidebar-left.html">Blog Sidebar Left</a></li>
-                                    <li><a href="blog_sidebar-right.html">Blog Sidebar Right</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
-                        </ul>
+                                <?php 
+                                       /**
+                                        * Displays a navigation menu
+                                        * @param array $args Arguments
+                                        */
+                                        $args = array(
+                                            'theme_location' => 'primary',
+                                            'menu_class' => 'nav navbar-nav',
+                                            'menu_id' => '',
+                                            'echo' => true,
+                                            'fallback_cb' => 'default_menu',
+                                            'walker' => new WP_Bootstrap_Navwalker()
+                                        );
+                                    
+                                        wp_nav_menu( $args );
+                                 ?>
                         <!-- Navigation Links End -->
                     </div>
                 </div>

@@ -406,6 +406,21 @@ add_action( 'after_setup_theme', 'interview_setup');
    }
  
    add_action( 'wp_enqueue_scripts', 'interview_css_js' );
+
+
+   // As a default menu, when it is not set 
+
+   function default_menu()
+   {
+     
+      echo '<ul class="nav navbar-nav">';
+      echo '<li><a href="'.home_url().'">HOME</a></li>';
+      echo '</ul>';
+
+   }
+
+   include('navwalker.php');
+
  
   
   

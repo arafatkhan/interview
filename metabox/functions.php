@@ -220,7 +220,80 @@ $cmb->add_group_field($right_domain_category, array(
 	'type'    => 'textarea_small'
     ) );
 
+//For Counter  post type
+	$cmb = new_cmb2_box( array(
+		'id'            => 'counter_part',
+		'title'         => __( 'Counter Info', 'cmb2' ),
+		'object_types'  => array( 'counter', ), // Post type
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // Keep the metabox closed by default
+		'show_on'    => array(
 
+				  'key' => 'id',
+				  'value'=> '139' 
+		) 
+	) );
+
+	 $cmb->add_field( array(
+		'name'    => 'company name',
+		'desc'    => 'counter company name',
+		'default' => 'write section name as company',
+		'id'      => 'company-name',
+		'type'    => 'text',
+	) );
+
+	 $cmb->add_field( array(
+		'name'    => 'statistics',
+		'desc'    => 'counter company statistics',
+		'default' => 'write section name as company statistics',
+		'id'      => 'company-static',
+		'type'    => 'text',
+	) );
+
+	$counter_part = $cmb->add_field(array(
+	'id'      => 'for-counter-part',
+	'type'    => 'group',
+	'description' => 'This is Group field for counter part',
+	'options'   => array(
+		'group_title'   => __( 'counter-"{#}"', 'cmb2' ), // since version 1.1.4, {#} gets replaced by row number
+		'add_button'    => __( 'Add new counter', 'cmb2' ),
+		'remove_button' => __( 'Remove Entry', 'cmb2' ),
+		'sortable'      => true, // beta
+		// 'closed'     => true, // true to have the groups closed by default
+	),
+
+));
+
+	$cmb->add_group_field($counter_part, array(
+	'name' => 'font-awsome add',
+	'desc' => 'this is for font-awesome field',
+	'default' => 'fa fa-',
+	'id'    => 'counter_font_awesome',
+	'type'    => 'text_small'
+    ) );
+
+	$cmb->add_group_field($counter_part, array(
+	'name' => 'add number',
+	'desc' => 'this is for number field',
+	'default' => '50',
+	'id'    => 'counter_number',
+	'type'    => 'text',
+	'attributes' => array(
+                'type' => 'number'
+            ),
+    ) );
+
+	$cmb->add_group_field($counter_part, array(
+	'name' => 'add caption',
+	'desc' => 'this is for caption',
+	'default' => 'HAPPY CLIENTS',
+	'id'    => 'counter_caption',
+	'type'    => 'text_small',
+	
+    ) );
 
 
 

@@ -400,58 +400,52 @@
         </div>
         <!-- Pricing Area End -->
         <!-- Counter Area Start -->
+                <?php
+
+                 $counter_data = new WP_Query(array(
+
+                        'post_type' => 'counter',
+                        'posts_per_page' => -1
+
+                    ));
+
+                    ?>
+                 <?php if ( $counter_data->have_posts() ) : while ($counter_data->have_posts() ) : $counter_data->the_post(); ?>
+                        <?php $data = get_post_meta( get_the_ID(), 'for-counter-part', true ); ?>
+                    
+                    <?php endwhile; ?>
+                    <!-- post navigation -->
+                    <?php else: ?>
+                    <!-- no posts found -->
+                    <?php endif; ?>
+
+               
+
         <div id="counter" data-bg-img="<?php echo get_template_directory_uri(); ?>/img/background-img/counter-bg.png">
             <div class="container">
                 <!-- Section Title Start -->
                 <div class="section-title">
-                    <h2><span>company</span>statistics</h2>
+                    <h2><span><?php echo get_post_meta( get_the_ID(), 'company-name', true); ?></span><?php echo get_post_meta( get_the_ID(), 'company-static', true ); ?></h2>
                 </div>
                 <!-- Section Title End -->
-                <div class="row">
-                    <div class="col-sm-3 col-xs-6">
+                <div class="row"> 
+                        <?php 
+                          foreach ($data as $value) { ?>
+                              
+                            <div class="col-sm-3 col-xs-6">
                         <!-- Counter Item Start -->
-                        <div class="counter-holder">
-                            <div class="counter-number-holder">
-                                <i class="fa fa-globe"></i>
-                                <span class="counter-number">670</span>
-                            </div>
-                            <p class="counter-text">domains registered</p>
-                        </div>
-                        <!-- Counter Item End -->
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <!-- Counter Item Start -->
-                        <div class="counter-holder">
-                            <div class="counter-number-holder">
-                                <i class="fa fa-users"></i>
-                                <span class="counter-number">980</span>
-                            </div>
-                            <p class="counter-text">happy clients</p>
-                        </div>
-                        <!-- Counter Item End -->
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <!-- Counter Item Start -->
-                        <div class="counter-holder">
-                            <div class="counter-number-holder">
-                                <i class="fa fa-server"></i>
-                                <span class="counter-number">250</span>
-                            </div>
-                            <p class="counter-text">vps servers sold</p>
-                        </div>
-                        <!-- Counter Item End -->
-                    </div>
-                    <div class="col-sm-3 col-xs-6">
-                        <!-- Counter Item Start -->
-                        <div class="counter-holder">
-                            <div class="counter-number-holder">
-                                <i class="fa fa-tasks"></i>
-                                <span class="counter-number">275</span>
-                            </div>
-                            <p class="counter-text">dedicated servers sold</p>
-                        </div>
-                        <!-- Counter Item End -->
-                    </div>
+                                <div class="counter-holder">
+                                    <div class="counter-number-holder">
+                                        <i class="<?php echo $value['counter_font_awesome'] ?>"></i>
+                                        <span class="counter-number"><?php echo $value['counter_number']; ?></span>
+                                    </div>
+                                    <p class="counter-text"><?php echo $value['counter_caption']; ?></p>
+                                </div>
+                                <!-- Counter Item End -->
+                           </div>
+
+                          <?php } 
+                        ?>
                 </div>
             </div>
         </div>

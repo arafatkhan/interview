@@ -21,8 +21,8 @@
  * {@link https://codex.wordpress.org/Plugin_API}
  *
  * @package WordPress
- * @subpackage Twenty_Sixteen
- * @since Twenty Sixteen 1.0
+ * @subpackage interview
+ * @since Twenty interview 1.0
  */
 
 if ( ! function_exists( 'interview_setup' ) ) :
@@ -41,7 +41,7 @@ function interview_setup() {
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed at WordPress.org. See: https://translate.wordpress.org/projects/wp-themes/twentysixteen
-	 * If you're building a theme based on Twenty Sixteen, use a find and replace
+	 * If you're building a theme based on interview, use a find and replace
 	 * to change 'twentysixteen' to the name of your theme in all the template files
 	 */
 	load_theme_textdomain( 'twentysixteen' );
@@ -165,7 +165,7 @@ add_action( 'after_setup_theme', 'interview_setup');
   		'show_in_menu'        => true,
   		'show_in_admin_bar'   => true,
   		'menu_position'       => null,
-  		'menu_icon'           => null,
+  		'menu_icon'           => 'dashicons-tickets-alt',
   		'show_in_nav_menus'   => true,
   		'publicly_queryable'  => true,
   		'exclude_from_search' => false,
@@ -221,7 +221,7 @@ add_action( 'after_setup_theme', 'interview_setup');
   		'show_in_menu'        => true,
   		'show_in_admin_bar'   => true,
   		'menu_position'       => null,
-  		'menu_icon'           => null,
+  		'menu_icon'           => 'dashicons-admin-multisite',
   		'show_in_nav_menus'   => true,
   		'publicly_queryable'  => true,
   		'exclude_from_search' => false,
@@ -275,7 +275,7 @@ add_action( 'after_setup_theme', 'interview_setup');
   		'show_in_menu'        => true,
   		'show_in_admin_bar'   => true,
   		'menu_position'       => null,
-  		'menu_icon'           => null,
+  		'menu_icon'           => 'dashicons-welcome-widgets-menus',
   		'show_in_nav_menus'   => true,
   		'publicly_queryable'  => true,
   		'exclude_from_search' => false,
@@ -420,6 +420,62 @@ add_action( 'after_setup_theme', 'interview_setup');
    }
 
    include('navwalker.php');
+
+
+   /**
+   * Registers a new post type
+   * @uses $wp_post_types Inserts new post type object into the list
+   *
+   * @param string  Post type key, must not exceed 20 characters
+   * @param array|string  See optional args description above.
+   * @return object|WP_Error the registered post type object, or an error object
+   */
+   function inter_counter() {
+   
+     $labels = array(
+       'name'                => __( 'Counters', 'interview_text' ),
+       'singular_name'       => __( 'Counter', 'interview_text' ),
+       'add_new'             => _x( 'Add New Counter', 'interview_text', 'interview_text' ),
+       'add_new_item'        => __( 'Add New Counter', 'interview_text' ),
+       'edit_item'           => __( 'Edit Counter', 'interview_text' ),
+       'new_item'            => __( 'New Counter', 'interview_text' ),
+       'view_item'           => __( 'View Counter', 'interview_text' ),
+       'search_items'        => __( 'Search Counters', 'interview_text' ),
+       'not_found'           => __( 'No Counters found', 'interview_text' ),
+       'not_found_in_trash'  => __( 'No Counters found in Trash', 'interview_text' ),
+       'parent_item_colon'   => __( 'Parent Counter:', 'interview_text' ),
+       'menu_name'           => __( 'Counters', 'interview_text' ),
+     );
+   
+     $args = array(
+       'labels'                   => $labels,
+       'hierarchical'        => false,
+       'description'         => 'description',
+       'taxonomies'          => array(),
+       'public'              => true,
+       'show_ui'             => true,
+       'show_in_menu'        => true,
+       'show_in_admin_bar'   => true,
+       'menu_position'       => null,
+       'menu_icon'           => 'dashicons-groups',
+       'show_in_nav_menus'   => true,
+       'publicly_queryable'  => true,
+       'exclude_from_search' => false,
+       'has_archive'         => true,
+       'query_var'           => true,
+       'can_export'          => true,
+       'rewrite'             => true,
+       'capability_type'     => 'post',
+       'supports'            => array(
+         'title'
+         )
+     );
+   
+     register_post_type( 'counter', $args );
+   }
+   
+   add_action( 'init', 'inter_counter' );
+   
 
  
   

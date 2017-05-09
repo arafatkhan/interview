@@ -30,25 +30,10 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900' rel='stylesheet' type='text/css'>
 
     <!-- ====Font Awesome Stylesheet==== -->
-    <link href="<?php echo get_template_directory_uri(); ?>/css/font-awesome.min.css" rel="stylesheet">
     
-    <!-- ====Bootstrap Stylesheet==== -->
-    <link href="<?php echo get_template_directory_uri(); ?>/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- ====Owl Carousel Stylesheet==== -->
-    <link href="<?php echo get_template_directory_uri(); ?>/css/owl.carousel.min.css" rel="stylesheet">
-    
-    <!-- ====bxSlider Stylesheet==== -->
-    <link href="<?php echo get_template_directory_uri(); ?>/css/jquery.bxslider.min.css" rel="stylesheet">
-    
-    <!-- ====Main Stylesheet==== -->
-    <link href="<?php echo get_template_directory_uri(); ?>/style.css" rel="stylesheet">
-    
-    <!-- ====Responsive Stylesheet==== -->
-    <link href="<?php echo get_template_directory_uri(); ?>/css/responsive-style.css" rel="stylesheet">
 
-    <!-- ====Main Color Scheme CSS==== -->
-    <link href="<?php echo get_template_directory_uri(); ?>/css/main-color-1.css" rel="stylesheet" type='text/css' id="mainColorScheme">
 
     <!-- HTML5 Shim and Respond.js IE9 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>

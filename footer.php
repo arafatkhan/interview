@@ -54,28 +54,21 @@
     <!-- Wrapper End -->
 
     <!-- ====jQuery Core Script==== -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery-2.2.2.min.js"></script>
+    
 
     <!-- ====Bootstrap Core Script==== -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
 
     <!-- ====jQuery Validation Plugin Script==== -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.validate.min.js"></script>
 
     <!-- ====Owl Carousel Script==== -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/owl.carousel.min.js"></script>
 
     <!-- ====bxSlider Script==== -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.bxslider.min.js"></script>
     
     <!-- ====jQuery Waypoints Plugin Script==== -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.waypoints.min.js"></script>
     
     <!-- ====jQuery Counter Up Plugin Script==== -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.counterup.min.js"></script>
 
     <!-- ====Isotope Plugin Script==== -->
-    <script src="<?php echo get_template_directory_uri(); ?>/js/isotope.min.js"></script>
     
     <!-- ====Twitter Widget==== -->
     <script src="https://platform.twitter.com/widgets.js"></script>
